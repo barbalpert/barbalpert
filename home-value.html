@@ -22,6 +22,7 @@
 <meta name="twitter:description" content="What is my home worth in State College, PA? Request a free, no-obligation home valuation prepared by hand by Barb Alpert, REALTOR®, Associate Broker.">
 <meta name="twitter:image" content="https://www.barbalpert.com/images/barb-alpert-cliff-rupert-realtors-state-college-pa.jpg">
 
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script src="assets/js/main.js" defer></script>
 
@@ -231,15 +232,36 @@
 
       <div>
         <!-- ============================================================
-             FORM: currently a mailto submission so it works on any static host
-             with no back end. RECOMMENDED before launch: swap the action for a
-             real form endpoint (Formspree, Netlify Forms, Basin, or KBB's CRM
-             lead capture) so submissions are captured reliably and don't depend
-             on the visitor having a mail client configured.
-             Example: <form class="form" action="https://formspree.io/f/XXXXXXX" method="post">
+             FORM DELIVERY
+             Submits over HTTPS to FormSubmit, which relays the contents to
+             barbalpert@gmail.com. Nothing opens the visitor's mail app, and the
+             site stays a plain static site with no back end.
+
+             ONE-TIME ACTIVATION: the first time this form is submitted,
+             FormSubmit emails barbalpert@gmail.com asking to confirm the
+             address. Click that link once and the form is live for good.
+
+             Hidden fields below:
+               _subject  - the subject line Barb sees in her inbox
+               _next     - where the visitor lands after submitting
+               _captcha  - disabled so there's no interstitial; the _honey
+                           honeypot field catches bots instead
+               _template - renders the email as a readable table
+             The visitor's own email is captured in the field named "email",
+             which FormSubmit uses as the reply-to address automatically.
+
+             To switch providers later, change only the action attribute and the
+             hidden field names (Formspree and Web3Forms use the same pattern).
              ============================================================ -->
-        <form class="form" action="mailto:barbalpert@gmail.com" method="post" enctype="text/plain">
+        <form class="form" action="https://formsubmit.co/barbalpert@gmail.com" method="POST">
           <h2 style="margin-top:0">Request your free home valuation</h2>
+
+          <input type="hidden" name="_subject" value="Home Valuation Request - barbalpert.com">
+          <input type="hidden" name="_next" value="https://www.barbalpert.com/thank-you.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <!-- Honeypot: hidden from people, irresistible to bots. -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
 
           <div class="field">
             <label for="hv-name">Your name</label>
@@ -263,7 +285,7 @@
           </div>
 
           <button class="btn btn--primary" type="submit" style="width:100%">Send My Request</button>
-          <p class="form-note" style="margin-top:1rem">Your information goes to Barb Alpert, REALTOR&reg; with Kissinger Bigatel &amp; Brower, and is used only to prepare and discuss your valuation. No spam, no list-selling.</p>
+          <p class="form-note" style="margin-top:1rem">Your information is emailed directly to Barb Alpert, REALTOR&reg; with Kissinger Bigatel &amp; Brower, and is used only to prepare and discuss your valuation. No spam, no list-selling.</p>
         </form>
 
         <div class="btn-row" style="margin-top:1.2rem">

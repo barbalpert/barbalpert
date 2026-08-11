@@ -19,7 +19,7 @@ Search the codebase for `VERIFY` and `PLACEHOLDER` to find each one in context.
 | # | Item | Where |
 |---|---|---|
 | 7 | **IDX / MLS search.** Four placeholder blocks await the KBB-approved IDX embed, or link them to Barb's search page on 1kbb.com. No listings were hand-written (they'd go stale and risk MLS compliance). | `index.html`, `buyers.html`, `farms-equestrian.html` |
-| 8 | **Form endpoint.** Both forms currently submit via `mailto:`, which works anywhere but depends on the visitor having a mail client. Swap to Formspree / Netlify Forms / KBB's CRM. | `home-value.html`, `contact.html` |
+| 8 | ⚠️ **Activate form delivery — ONE CLICK NEEDED.** Both forms now POST to FormSubmit, which emails the contents to barbalpert@gmail.com (no mail app opens). **The very first submission sends a confirmation email to that inbox — Barb must click the link in it once, and then the forms work permanently.** Submit each form once yourself after the site is live to trigger and complete this. | `home-value.html`, `contact.html` |
 | ~~11~~ | ~~**KBB logo artwork.**~~ ✅ **RESOLVED** — official `images/kbb-logo.png` is live in the top-left of all 19 pages at 56/68/78px tall. The placeholder SVG recreation has been deleted. | — |
 | 12 | **Blog post dates.** All three posts are dated `2026-08-11` in their `BlogPosting` schema. Set real publication dates. | `blog/*.html` |
 | ~~14~~ | ~~**Compress the photos.**~~ ✅ **RESOLVED** — hero 2.6 MB → 468 KB (3648px → 1500px), competition 848 KB → 252 KB. Total image weight 3.5 MB → 1.0 MB. All `width`/`height` attributes re-verified against the files. | — |

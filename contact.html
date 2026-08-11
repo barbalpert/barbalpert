@@ -22,6 +22,7 @@
 <meta name="twitter:description" content="Contact realtor Barb Alpert in State College, PA: call or text 814-360-5742, email, or send a message. Kissinger Bigatel &amp; Brower office details inside.">
 <meta name="twitter:image" content="https://www.barbalpert.com/images/barb-alpert-cliff-rupert-realtors-state-college-pa.jpg">
 
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script src="assets/js/main.js" defer></script>
 
@@ -211,13 +212,22 @@
 
       <div>
         <!-- ============================================================
-             FORM: mailto submission so it works on any static host with no
-             back end. RECOMMENDED before launch: swap the action for a real
-             form endpoint (Formspree, Netlify Forms, Basin, or KBB's CRM lead
-             capture) so nothing depends on the visitor's mail client.
+             FORM DELIVERY
+             Submits over HTTPS to FormSubmit, which relays the contents to
+             barbalpert@gmail.com. Nothing opens the visitor's mail app, and the
+             site stays a plain static site with no back end.
+             See home-value.html for the full explanation of the hidden fields
+             and the one-time address activation step.
              ============================================================ -->
-        <form class="form" action="mailto:barbalpert@gmail.com" method="post" enctype="text/plain">
+        <form class="form" action="https://formsubmit.co/barbalpert@gmail.com" method="POST">
           <h2 style="margin-top:0">Send us a message</h2>
+
+          <input type="hidden" name="_subject" value="New Website Enquiry - barbalpert.com">
+          <input type="hidden" name="_next" value="https://www.barbalpert.com/thank-you.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <!-- Honeypot: hidden from people, irresistible to bots. -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
           <div class="field">
             <label for="c-name">Your name</label>
             <input id="c-name" name="name" type="text" autocomplete="name" required>
@@ -246,7 +256,7 @@
             <textarea id="c-message" name="message"></textarea>
           </div>
           <button class="btn btn--primary" type="submit" style="width:100%">Send Message</button>
-          <p class="form-note" style="margin-top:1rem">Your message goes to Barb Alpert, REALTOR&reg; with Kissinger Bigatel &amp; Brower. We use it only to reply to you.</p>
+          <p class="form-note" style="margin-top:1rem">Your message is emailed directly to Barb Alpert, REALTOR&reg; with Kissinger Bigatel &amp; Brower. We use it only to reply to you.</p>
         </form>
       </div>
     </div>

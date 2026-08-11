@@ -191,7 +191,12 @@ a.wordmark:hover { color: var(--red); }
    rule at equal specificity. Without the scope the button leaks onto mobile. */
 .site-header .header-cta { display: none; }
 @media (min-width: 1280px) {
-  .site-header .header-cta { display: inline-flex; margin-left: .6rem; }
+  /* nowrap + flex:none keeps the phone number on one line instead of breaking
+     mid-number when the nav gets wide. */
+  .site-header .header-cta {
+    display: inline-flex; margin-left: .6rem;
+    white-space: nowrap; flex: none;
+  }
 }
 
 /* ---------- Buttons ---------- */
