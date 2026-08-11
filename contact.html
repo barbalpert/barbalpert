@@ -212,21 +212,28 @@
 
       <div>
         <!-- ============================================================
-             FORM DELIVERY
-             Submits over HTTPS to FormSubmit, which relays the contents to
-             barbalpert@gmail.com. Nothing opens the visitor's mail app, and the
-             site stays a plain static site with no back end.
-             See home-value.html for the full explanation of the hidden fields
-             and the one-time address activation step.
+             FORM DELIVERY — Google Apps Script
+             Posts to a small script running inside Barb's own Google account,
+             which emails the contents to barbalpert@gmail.com and then sends
+             the visitor to our own thank-you.html. No third-party form service,
+             no cost, no mail app opening on the visitor's machine.
+
+             >>> SETUP REQUIRED: replace the action URL below with the Web app
+             >>> URL from the deployment. Step-by-step instructions are in
+             >>> form-handler/README.md.
+
+             This is a plain HTML form post on purpose — it needs no JavaScript
+             and has no cross-origin issues.
              ============================================================ -->
-        <form class="form" action="https://formsubmit.co/barbalpert@gmail.com" method="POST">
+        <form class="form" action="PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE" method="POST">
           <h2 style="margin-top:0">Send us a message</h2>
 
+          <!-- Control fields read by the Apps Script handler (never emailed as content). -->
           <input type="hidden" name="_subject" value="New Website Enquiry - barbalpert.com">
           <input type="hidden" name="_next" value="https://www.barbalpert.com/thank-you.html">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <!-- Honeypot: hidden from people, irresistible to bots. -->
+          <input type="hidden" name="_form" value="Contact page">
+          <!-- Honeypot: hidden from people, irresistible to bots. Submissions
+               with this filled in are silently discarded. -->
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
           <div class="field">
             <label for="c-name">Your name</label>

@@ -32,6 +32,13 @@ images/                 See images/README.md for required filenames
 sitemap.xml, robots.txt
 ```
 
+## Forms
+
+Both forms (`contact.html`, `home-value.html`) post to a Google Apps Script that
+runs in Barb's own Google account and emails submissions to barbalpert@gmail.com.
+No third-party form service, no cost. **The script must be deployed and its URL
+pasted into both files before the forms work** — see `form-handler/README.md`.
+
 ## Editing rules
 
 **The header, footer, NAP block and CTA band are byte-for-byte identical on all 19
