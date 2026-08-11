@@ -30,7 +30,7 @@ Search the codebase for `VERIFY` and `PLACEHOLDER` to find each one in context.
 
 - Submit `sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 - Verify the Google Business Profile and make its NAP **byte-for-byte identical** to the site footer.
-- The `AggregateRating` / `Review` schema at the bottom of `reviews.html` is still commented out. The review text is real, but structured data needs an author per review plus a substantiated rating and count — the Google Business Profile is the easiest verifiable source. Never publish a rating you can't back up.
+- The `AggregateRating` / `Review` schema at the bottom of `reviews.html` is still commented out. The review text is real, but structured data needs an author per review plus a substantiated rating and count. Never publish a rating you can't back up.
 - Build out the Tier-2 community pages (Port Matilda, Pleasant Gap, Lemont, Philipsburg, Howard, Spring Mills/Millheim) — stub instructions are commented in `communities/index.html`. Add each to `sitemap.xml` when live.
 - Run PageSpeed Insights after the photos are in. Image compression is the single biggest win available.
 - Consider adding a privacy policy page if you add any analytics or a third-party form.
