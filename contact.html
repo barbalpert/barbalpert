@@ -218,14 +218,14 @@
              the visitor to our own thank-you.html. No third-party form service,
              no cost, no mail app opening on the visitor's machine.
 
-             >>> SETUP REQUIRED: replace the action URL below with the Web app
-             >>> URL from the deployment. Step-by-step instructions are in
-             >>> form-handler/README.md.
+             The action URL is the deployed Web app. If the script is ever
+             redeployed to a NEW deployment, update it here and in the other
+             form. See form-handler/README.md.
 
              This is a plain HTML form post on purpose — it needs no JavaScript
              and has no cross-origin issues.
              ============================================================ -->
-        <form class="form" action="PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE" method="POST">
+        <form class="form" action="https://script.google.com/macros/s/AKfycbyK8sBGtKxKrhkBV9ZmFTuNbZcQHBDtjLCiqSVgZ3sXcXzSd7n9UlDBoY_v8flHPc7j/exec" method="POST">
           <h2 style="margin-top:0">Send us a message</h2>
 
           <!-- Control fields read by the Apps Script handler (never emailed as content). -->
