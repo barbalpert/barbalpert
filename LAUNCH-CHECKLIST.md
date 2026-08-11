@@ -11,7 +11,7 @@ Search the codebase for `VERIFY` and `PLACEHOLDER` to find each one in context.
 | ~~2~~ | ~~**KBB office phone.**~~ ✅ **RESOLVED** — `814-234-4000 ext. 3140` confirmed and kept, after checking against the `814-238-6771` figure printed in the KBB Farm & Equine Seller's Guide PDF. Noted here in case that PDF gets reused: the two sources disagree, and the site intentionally follows the number you confirmed. | — |
 | ~~3~~ | ~~**Photos.**~~ ✅ **RESOLVED** — all three photos uploaded, optimized and live; zero broken images site-wide. | — |
 | ~~4~~ | ~~**Photo rights.**~~ ✅ **RESOLVED** — rights confirmed. The RBM Photography watermark stays in the image out of respect for the photographer, and a visible caption credit was added on `about.html` and `farms-equestrian.html`. | — |
-| 5 | **Real testimonials.** Six placeholder review cards must be replaced with verbatim client quotes used with permission. Nothing was invented. | `reviews.html`, plus a 2-quote teaser on `index.html` |
+| ~~5~~ | ~~**Real testimonials.**~~ ✅ **RESOLVED** — six real client reviews from Barb's 1kbb.com testimonials page are live, reproduced verbatim, plus a two-quote teaser on the home page. **Follow-up:** they published without reviewer names (see item 15). | — |
 | 6 | **KBB brand-compliance sign-off.** Have the broker of record review the header, hero and footer treatment before launch. | All pages |
 
 ## 🟡 Should be done at launch
@@ -20,18 +20,17 @@ Search the codebase for `VERIFY` and `PLACEHOLDER` to find each one in context.
 |---|---|---|
 | 7 | **IDX / MLS search.** Four placeholder blocks await the KBB-approved IDX embed, or link them to Barb's search page on 1kbb.com. No listings were hand-written (they'd go stale and risk MLS compliance). | `index.html`, `buyers.html`, `farms-equestrian.html` |
 | 8 | **Form endpoint.** Both forms currently submit via `mailto:`, which works anywhere but depends on the visitor having a mail client. Swap to Formspree / Netlify Forms / KBB's CRM. | `home-value.html`, `contact.html` |
-| 9 | **Google Maps embed.** Placeholder awaiting the iframe for the correct office. | `contact.html` |
-| 10 | **Google Business Profile review link.** The "Leave a Review" button points at the contact page until you paste the direct GBP review URL. | `reviews.html` |
 | ~~11~~ | ~~**KBB logo artwork.**~~ ✅ **RESOLVED** — official `images/kbb-logo.png` is live in the top-left of all 19 pages at 56/68/78px tall. The placeholder SVG recreation has been deleted. | — |
 | 12 | **Blog post dates.** All three posts are dated `2026-08-11` in their `BlogPosting` schema. Set real publication dates. | `blog/*.html` |
 | ~~14~~ | ~~**Compress the photos.**~~ ✅ **RESOLVED** — hero 2.6 MB → 468 KB (3648px → 1500px), competition 848 KB → 252 KB. Total image weight 3.5 MB → 1.0 MB. All `width`/`height` attributes re-verified against the files. | — |
+| 15 | **Reviewer names on testimonials.** The six reviews went up unattributed because the source page had no names — each `<cite>` currently reads "Client review via 1kbb.com". If you have permission to use names, swap in first name + last initial + town + year. Named reviews are far more persuasive, and they're what the `Review` schema needs to go live. | `reviews.html`, `index.html` |
 | 13 | **Barb's designations.** The PDF lists **ABR · SRES · CRS** after her name. These aren't on the site yet — worth adding to the footer, About and Contact once you confirm they're all current. | site-wide |
 
 ## 🟢 After launch
 
 - Submit `sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 - Verify the Google Business Profile and make its NAP **byte-for-byte identical** to the site footer.
-- Once real reviews exist, uncomment the `AggregateRating` / `Review` schema at the bottom of `reviews.html` and fill in true values. Never publish a rating you can't substantiate.
+- The `AggregateRating` / `Review` schema at the bottom of `reviews.html` is still commented out. The review text is real, but structured data needs an author per review plus a substantiated rating and count — the Google Business Profile is the easiest verifiable source. Never publish a rating you can't back up.
 - Build out the Tier-2 community pages (Port Matilda, Pleasant Gap, Lemont, Philipsburg, Howard, Spring Mills/Millheim) — stub instructions are commented in `communities/index.html`. Add each to `sitemap.xml` when live.
 - Run PageSpeed Insights after the photos are in. Image compression is the single biggest win available.
 - Consider adding a privacy policy page if you add any analytics or a third-party form.

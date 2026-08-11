@@ -357,6 +357,31 @@ blockquote.pull cite { display: block; margin-top: .6rem; font: 600 .9rem/1.4 va
 .mobile-bar svg { width: 17px; height: 17px; fill: currentColor; }
 @media (min-width: 800px) { .mobile-bar { display: none; } }
 
+/* ---------- Client reviews ----------
+   CSS columns rather than grid: testimonials vary wildly in length, and columns
+   pack them by height instead of forcing every card in a row to match the
+   tallest one. */
+.review-list { columns: 1; column-gap: 1.15rem; }
+@media (min-width: 900px) { .review-list { columns: 2; } }
+.review {
+  break-inside: avoid;
+  margin: 0 0 1.15rem;
+  padding: 1.4rem 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--red);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow);
+}
+.review p { margin: 0; font-size: 1rem; line-height: 1.65; }
+.review p::before { content: "\201C"; color: var(--red); font-family: var(--serif); font-size: 2.2rem; line-height: 0; vertical-align: -.35rem; margin-right: .15rem; }
+.review p::after { content: "\201D"; color: var(--red); font-family: var(--serif); font-size: 2.2rem; line-height: 0; vertical-align: -.35rem; margin-left: .1rem; }
+.review cite {
+  display: block; margin-top: .9rem; font-style: normal;
+  font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
 /* ---------- Article / blog ---------- */
 .article { padding-block: 2rem 2.6rem; }
 .article .meta { font-size: .88rem; color: var(--ink-soft); margin-bottom: 1.5rem; }
