@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "/private/tmp/claude-501/-Users-chloealpert-Documents-GitHub-barbalpert/7cbe559f-57af-4dcf-959a-40eec0ede78a/scratchpad/serve.py"
+      ],
+      "port": 4321
+    }
+  ]
+}

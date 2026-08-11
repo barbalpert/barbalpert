@@ -1,0 +1,7 @@
+# robots.txt for www.barbalpert.com
+# Barb Alpert, REALTOR(R) | Kissinger Bigatel & Brower REALTORS(R)
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.barbalpert.com/sitemap.xml
