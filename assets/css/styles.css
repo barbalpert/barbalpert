@@ -350,13 +350,15 @@ blockquote.pull cite { display: block; margin-top: .6rem; font: 600 .9rem/1.4 va
 /* ---------- Mobile sticky call/text bar ---------- */
 .mobile-bar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
-  display: grid; grid-template-columns: 1fr 1fr;
+  /* Three columns: KBB office first (site rule), then Barb's cell and text. */
+  display: grid; grid-template-columns: repeat(3, 1fr);
   background: var(--red); border-top: 1px solid rgba(255, 255, 255, .2);
   padding-bottom: env(safe-area-inset-bottom);
 }
 .mobile-bar a {
   display: flex; align-items: center; justify-content: center; gap: .45rem;
-  padding: .95rem .5rem; color: #fff; text-decoration: none; font-weight: 600; font-size: .95rem;
+  padding: .95rem .35rem; color: #fff; text-decoration: none; font-weight: 600; font-size: .82rem;
+  text-align: center; line-height: 1.15;
 }
 .mobile-bar a + a { border-left: 1px solid rgba(255, 255, 255, .28); }
 .mobile-bar svg { width: 17px; height: 17px; fill: currentColor; }
