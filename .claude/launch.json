@@ -5,9 +5,9 @@
       "name": "site",
       "runtimeExecutable": "python3",
       "runtimeArgs": [
-        "/private/tmp/claude-501/-Users-chloealpert-Documents-GitHub-barbalpert/7cbe559f-57af-4dcf-959a-40eec0ede78a/scratchpad/serve.py"
+        "/private/tmp/claude-501/-Users-chloealpert-Documents-GitHub-barbalpert/c2c7ce11-e2a4-4737-980d-35501874c377/scratchpad/serve.py"
       ],
-      "port": 4321
+      "port": 4322
     }
   ]
 }
